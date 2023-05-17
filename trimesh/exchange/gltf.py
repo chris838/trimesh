@@ -967,7 +967,7 @@ def _build_accessor(array):
         data_type = "MAT%d" % shape[2]
 
     # get the array data type as a str stripping off endian
-    lookup = array.dtype.str.lstrip('<>')
+    lookup = array.dtype.str.lstrip('<>|')
 
     if lookup == 'u4':
         # spec: UNSIGNED_INT is only allowed when the accessor
